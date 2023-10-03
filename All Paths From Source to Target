@@ -1,0 +1,23 @@
+class Solution {
+public:
+
+    vector<vector<int>> ans;
+
+    void solve(vector<vector<int>>& graph, int i, int d, vector<int> path){
+        if(i == d){
+            path.push_back(d);
+            ans.push_back(path);
+            return;
+        }
+        path.push_back(i);
+        for(int j = 0; j < graph[i].size(); j++){
+            solve(graph, graph[i][j], d, path);
+        }
+    }
+
+    vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
+        vector<int>path;
+        solve(graph, 0, graph.size() - 1, path);
+        return ans;
+    }
+};
