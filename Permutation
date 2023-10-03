@@ -15,7 +15,8 @@ public:
     }
 
     vector<vector<int>> permute(vector<int>& nums) {
-        solve(nums, 0, nums.size() - 1);
+        int n = nums.size();
+        solve(nums, 0, n - 1);
         return ans;
     }
 };
