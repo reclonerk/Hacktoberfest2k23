@@ -3,7 +3,8 @@ public:
     int mx = INT_MIN;
     int c = 0;
     void solve(vector<int>& nums, int i, int op){
-        if(i == nums.size()){
+        int n = nums.size();
+        if(i == n){
             if(op > mx){
                 c = 1;
                 mx = op;
