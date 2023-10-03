@@ -4,13 +4,14 @@ public:
     vector<vector<int>> ans;
 
     void solve(vector<vector<int>>& graph, int i, int d, vector<int> path){
+        int n = graph.size();
         if(i == d){
             path.push_back(d);
             ans.push_back(path);
             return;
         }
         path.push_back(i);
-        for(int j = 0; j < graph[i].size(); j++){
+        for(int j = 0; j < n; j++){
             solve(graph, graph[i][j], d, path);
         }
     }
