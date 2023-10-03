@@ -17,6 +17,7 @@ public:
     }
 
     int countMaxOrSubsets(vector<int>& nums) {
+    int n = nums.size();
      solve(nums, 0, 0); 
      return c; 
     }
