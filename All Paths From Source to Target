@@ -10,8 +10,8 @@ public:
             return;
         }
         path.push_back(i);
-        for(int j = 0; j < graph[i].size(); j++){
-            solve(graph, graph[i][j], d, path);
+        for(auto j : graph[i]){
+            solve(graph, j, d, path);
         }
     }
 
