@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int mx = INT_MIN;
+    int c = 0;
+    void solve(vector<int>& nums, int i, int op){
+        if(i == nums.size()){
+            if(op > mx){
+                c = 1;
+                mx = op;
+            } else if(op == mx) {
+                c++;
+            }
+            return;
+        }
+        solve(nums, i+1, op);
+        solve(nums, i+1, op|nums[i]);
+    }
+
+    int countMaxOrSubsets(vector<int>& nums) {
+     solve(nums, 0, 0); 
+     return c; 
+    }
+};
