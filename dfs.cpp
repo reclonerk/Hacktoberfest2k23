@@ -55,7 +55,7 @@ int main()
 			" (starting from vertex 2) \n";
 
 	// Function call
-	g.DFS(2);
+	g.DFS(1);
 
 	return 0;
 }
