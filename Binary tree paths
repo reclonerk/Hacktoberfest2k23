@@ -12,7 +12,7 @@
 class Solution {
 public:
     void solve(TreeNode* root, string path, vector<string>& ans){
-        if(root == nullptr)
+        if(root == NULL)
             return;
         string s = to_string(root->val);
         if(path.length() > 0)
@@ -21,7 +21,7 @@ public:
             path += s;
         solve(root->left, path, ans);
         solve(root->right, path, ans);
-        if(root->left == nullptr && root->right == nullptr)
+        if(root->left == NULL && root->right == NULL)
             ans.push_back(path);
 
     }
